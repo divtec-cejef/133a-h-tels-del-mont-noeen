@@ -77,7 +77,8 @@ button {
 }
 
 
-input[type="reset"] {
+input[type="reset"],
+button[type="reset"] {
     background-color: #CCC;
 }
 
