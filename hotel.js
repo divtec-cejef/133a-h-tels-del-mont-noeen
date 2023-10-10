@@ -72,7 +72,20 @@ console.log(getOptions());
  */
 function valideSaisie() {
 
+    let messageErreur = "";
+
+    if (getHotel() === "0") {
+        messageErreur += "<li>Sélectionnez un hôtel !</li>";
+    }
+    if (getNbChambre() < 1 || getNbChambre() > 12 || isNaN(getNbChambre())) {
+        messageErreur += "<li>Saisissez un nombre de chambres entre 1 et 12 !</li>";
+    }
+    if (getChambre() === "") {
+        messageErreur += "<li>Sélectionnez un type de chambre !</li>";
+    }
+    return messageErreur;
 }
+console.log(valideSaisie());
 
 /**
  * Affiche la confirmation de réservation
