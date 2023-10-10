@@ -14,7 +14,9 @@ console.log(form);
 
 // Récupère les différents champs du formulaire
 const lisHotel = document.querySelector("#lis-hotel");
+const txtNbrChambre = document.querySelector("#txt-nbrChambre");
 console.log(lisHotel, lisHotel.value);
+console.log(txtNbrChambre, txtNbrChambre.value, parseFloat(txtNbrChambre.value));
 
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
@@ -23,7 +25,6 @@ console.log(lisHotel, lisHotel.value);
 function getHotel() {
     return lisHotel.value;
 }
-
 console.log(getHotel());
 
 /**
@@ -31,8 +32,9 @@ console.log(getHotel());
  * @returns {Number} Nombre de chambres ou NaN (Not A Number)
  */
 function getNbChambre() {
-
+    return parseFloat(txtNbrChambre.value);
 }
+console.log(getNbChambre());
 
 /**
  * Retourne le type de chambre sélectionné ou ""
