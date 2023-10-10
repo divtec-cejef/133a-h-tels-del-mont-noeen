@@ -13,7 +13,8 @@ const form = document.querySelector("#formHotel");
 console.log(form);
 
 // Récupère les différents champs du formulaire
-const lisHotel = document.querySelector("#lis_hotel");
+const lisHotel = document.querySelector("#lis-hotel");
+console.log(lisHotel, lisHotel.value);
 
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
@@ -21,8 +22,9 @@ const lisHotel = document.querySelector("#lis_hotel");
  */
 function getHotel() {
     return lisHotel.value;
-
 }
+
+console.log(getHotel());
 
 /**
  * Retourne le nombre de chambres saisi par le visiteur
