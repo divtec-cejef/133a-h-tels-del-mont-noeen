@@ -8,11 +8,19 @@
 
 "use strict";
 
+// Récupère le formulaire
+const form = document.querySelector("#formHotel");
+console.log(form);
+
+// Récupère les différents champs du formulaire
+const lisHotel = document.querySelector("#lis_hotel");
+
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
  * @returns {String} Nom de l'hotêl ou "0" si pas de sélection
  */
 function getHotel() {
+    return lisHotel.value;
 
 }
 
@@ -64,10 +72,9 @@ function afficheConfirmation() {
  * @param event Objet représentant l'événement
  */
 function reserver(event) {
-    alert("Coucou !");
-}
 
-const form = document.querySelector("#formHotel");
-console.log(form);
+    // Stoppe l'envoi du formulaire
+    event.preventDefault();
+}
 
 form.addEventListener("submit", reserver);
