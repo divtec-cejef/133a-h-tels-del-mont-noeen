@@ -64,5 +64,10 @@ function afficheConfirmation() {
  * @param event Objet représentant l'événement
  */
 function reserver(event) {
-
+    alert("Coucou !");
 }
+
+const form = document.querySelector("#formHotel");
+console.log(form);
+
+form.addEventListener("submit", reserver);
