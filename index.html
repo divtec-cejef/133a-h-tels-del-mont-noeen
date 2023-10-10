@@ -15,7 +15,49 @@
     <h1>Hôtels à Delémont</h1>
 
     <!-- FORMULAIRE DE RESERVATION -->
-    <!-- au cas ou t'aurais pas compris place ton fromulaire ici. A+ Manfred -->
+    <form>
+        <ul>
+            <li>
+                <label for="lis_hotel">Hôtel</label>
+                <select id="lis_hotel" name="lis_hotel">
+                    <option value="0">-- Sélectionnez un hôtel --</option>
+                    <option value="City">Hôtel City</option>
+                    <option value="National">Hôtel National</option>
+                    <option value="Midi">Hôtel Le Midi</option>
+                    <option value="Victoria">Hôtel Victoria</option>
+                </select>
+            </li>
+            <li>
+                <label for="txt_nbrChambre">Nombre de chambres</label>
+                <input id="txt_nbrChambre" name="txt_nbrChambre" type="text">
+            </li>
+            <li>
+                <fieldset>
+                    <legend>Type de chambre</legend>
+                    <label>
+                        <input name="opt_type_chambre" type="radio"
+                               value="standard simple">
+                        <span>Standard simple</span>
+                    </label>
+                    <label>
+                        <input name="opt_type_chambre" type="radio"
+                               value="standard double">
+                        <span>Standard double</span>
+                    </label>
+                    <label>
+                        <input name="opt_type_chambre" type="radio"
+                               value="supérieure simple">
+                        <span>Supérieure simple</span>
+                    </label>
+                    <label>
+                        <input name="opt_type_chambre" type="radio"
+                               value="supérieure double">
+                        <span>Supérieure double</span>
+                    </label>
+                </fieldset>
+            </li>
+        </ul>
+    </form>
 </div>
 
 <!-- RESERVATION -->
