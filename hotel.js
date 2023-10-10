@@ -54,8 +54,14 @@ console.log(getChambre());
  * @returns {Array} tableau des éléments checkbox cochés
  */
 function getOptions() {
-
+    const options = form.querySelectorAll("[name='options']:checked");
+    const optionsValues = [];
+    for (let option of options) {
+        optionsValues.push(option.id);
+    }
+    return optionsValues;
 }
+console.log(getOptions());
 
 /**
  * Valide la saisie utilisateur
