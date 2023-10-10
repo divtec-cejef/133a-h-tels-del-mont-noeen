@@ -13,8 +13,8 @@ const form = document.querySelector("#formHotel");
 console.log(form);
 
 // Récupère les différents champs du formulaire
-const lisHotel = document.querySelector("#lis-hotel");
-const txtNbrChambre = document.querySelector("#txt-nbrChambre");
+const lisHotel = form.querySelector("#lis-hotel");
+const txtNbrChambre = form.querySelector("#txt-nbrChambre");
 console.log(lisHotel, lisHotel.value);
 console.log(txtNbrChambre, txtNbrChambre.value, parseFloat(txtNbrChambre.value));
 
@@ -41,7 +41,7 @@ console.log(getNbChambre());
  * @returns {String} Type de chambre ou ""
  */
 function getChambre() {
-    const typeChambre = document.querySelector("[name='type-chambre']:checked");
+    const typeChambre = form.querySelector("[name='type-chambre']:checked");
     if (typeChambre === null) {
         return "";
     }
