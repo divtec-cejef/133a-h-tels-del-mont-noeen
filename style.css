@@ -58,6 +58,11 @@ textarea {
 	min-height: 10em;
 }
 
+fieldset label {
+	display: block;
+	margin-left: 10px;
+}
+
 /******************
  Boutons
 ******************/
