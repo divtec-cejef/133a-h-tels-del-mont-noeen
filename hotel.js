@@ -41,8 +41,13 @@ console.log(getNbChambre());
  * @returns {String} Type de chambre ou ""
  */
 function getChambre() {
-
+    const typeChambre = document.querySelector("[name='type-chambre']:checked");
+    if (typeChambre === null) {
+        return "";
+    }
+    return typeChambre.value;
 }
+console.log(getChambre());
 
 /**
  * Retourne les options choisies par le visiteur
