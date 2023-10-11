@@ -11,7 +11,8 @@
 // Récupère le formulaire
 const form = document.querySelector("#formHotel");
 const reservation = document.querySelector("#reservation");
-console.log(form, reservation);
+const message = document.querySelector("#message");
+console.log(form, reservation, message);
 
 // Récupère les différents champs du formulaire
 const lisHotel = form.querySelector("#lis-hotel");
@@ -111,8 +112,6 @@ function afficheConfirmation() {
         getNbChambre().toString(), getChambre());
 }
 
-afficheConfirmation();
-
 /**
  * Fonction appellé lors de l'envoi du formulaire
  * Test la saisie et affiche la confirmation ou le message d'erreur
@@ -122,6 +121,19 @@ function reserver(event) {
 
     // Stoppe l'envoi du formulaire
     event.preventDefault();
+
+    // Vide et cache la div #message
+    message.innerHTML = "";
+    message.removeAttribute("style");
+
+    let messageErreur = valideSaisie();
+    if (messageErreur !== "") {
+        message.innerHTML = `<ul>${messageErreur}</ul>`;
+        message.style.display = "block";
+        reservation.removeAttribute("style");
+    } else {
+        afficheConfirmation();
+    }
 }
 
 form.addEventListener("submit", reserver);
