@@ -10,13 +10,22 @@
 
 // Récupère le formulaire
 const form = document.querySelector("#formHotel");
-console.log(form);
+const reservation = document.querySelector("#reservation");
+console.log(form, reservation);
 
 // Récupère les différents champs du formulaire
 const lisHotel = form.querySelector("#lis-hotel");
 const txtNbrChambre = form.querySelector("#txt-nbrChambre");
 console.log(lisHotel, lisHotel.value);
 console.log(txtNbrChambre, txtNbrChambre.value, parseFloat(txtNbrChambre.value));
+
+// Récupère les éléments de la div réservation
+const photo = reservation.querySelector("#photo");
+const titre = reservation.querySelector("h2");
+const chambreNombre = reservation.querySelector("#chambre_nombre");
+const chambreType = reservation.querySelector("#chambre_type");
+console.log(photo, titre);
+console.log(chambreNombre, chambreType);
 
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
@@ -91,8 +100,18 @@ console.log(valideSaisie());
  * Affiche la confirmation de réservation
  */
 function afficheConfirmation() {
-
+    getHotel();
+    photo.src = `images/${lisHotel.value.toLowerCase()}.jpg`;
+    titre.innerHTML = lisHotel.querySelector("option:checked").innerText;
+    chambreNombre.innerHTML = getNbChambre().toString();
+    chambreType.innerHTML = getChambre();
+    reservation.style.display = "block";
+    console.log(`images/${lisHotel.value.toLowerCase()}.jpg`,
+        lisHotel.querySelector("option:checked").innerText,
+        getNbChambre().toString(), getChambre());
 }
+
+afficheConfirmation();
 
 /**
  * Fonction appellé lors de l'envoi du formulaire
