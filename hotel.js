@@ -103,6 +103,7 @@ function afficheConfirmation() {
     titre.innerHTML = lisHotel.querySelector("option:checked").innerText;
     chambreNombre.innerHTML = getNbChambre().toString();
     chambreType.innerHTML = getChambre();
+    optionsList.innerHTML = "";
     for (let option of getOptions()) {
         optionsList.innerHTML += `<li>${option.id}</li>`;
     }
@@ -137,3 +138,7 @@ function reserver(event) {
 }
 
 form.addEventListener("submit", reserver);
+form.addEventListener("reset", () => {
+    message.removeAttribute("style");
+    reservation.removeAttribute("style");
+});
