@@ -24,8 +24,9 @@ const photo = reservation.querySelector("#photo");
 const titre = reservation.querySelector("h2");
 const chambreNombre = reservation.querySelector("#chambre_nombre");
 const chambreType = reservation.querySelector("#chambre_type");
+const optionsList = reservation.querySelector("#options");
 console.log(photo, titre);
-console.log(chambreNombre, chambreType);
+console.log(chambreNombre, chambreType, optionsList);
 
 /**
  * Retourne le nom de l'hotel sélectionné par le visiteur
@@ -64,11 +65,7 @@ console.log(getChambre());
  */
 function getOptions() {
     const options = form.querySelectorAll("[name='options']:checked");
-    const optionsValues = [];
-    for (let option of options) {
-        optionsValues.push(option.id);
-    }
-    return optionsValues;
+    return options;
 }
 console.log(getOptions());
 
@@ -105,6 +102,9 @@ function afficheConfirmation() {
     titre.innerHTML = lisHotel.querySelector("option:checked").innerText;
     chambreNombre.innerHTML = getNbChambre().toString();
     chambreType.innerHTML = getChambre();
+    for (let option of getOptions()) {
+        optionsList.innerHTML += `<li>${option.id}</li>`;
+    }
     reservation.style.display = "block";
     console.log(`images/${lisHotel.value.toLowerCase()}.jpg`,
         lisHotel.querySelector("option:checked").innerText,
